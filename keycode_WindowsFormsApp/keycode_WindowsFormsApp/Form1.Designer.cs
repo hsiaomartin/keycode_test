@@ -38,10 +38,14 @@
             this.character_label = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.XY_label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.speed_domainUpDown = new System.Windows.Forms.DomainUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.X_button = new System.Windows.Forms.Button();
+            this.Z_button = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -77,6 +81,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Z_button);
+            this.groupBox1.Controls.Add(this.X_button);
             this.groupBox1.Controls.Add(this.left_button);
             this.groupBox1.Controls.Add(this.down_button);
             this.groupBox1.Controls.Add(this.right_button);
@@ -124,9 +130,9 @@
             this.character_label.AutoSize = true;
             this.character_label.Location = new System.Drawing.Point(9, 24);
             this.character_label.Name = "character_label";
-            this.character_label.Size = new System.Drawing.Size(15, 12);
+            this.character_label.Size = new System.Drawing.Size(17, 12);
             this.character_label.TabIndex = 4;
-            this.character_label.Text = "@";
+            this.character_label.Text = "█";
             // 
             // groupBox2
             // 
@@ -141,6 +147,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Controls.Add(this.XY_label);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.speed_domainUpDown);
@@ -152,23 +160,42 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Status";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 12);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Color：";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(63, 53);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(43, 20);
+            this.comboBox1.TabIndex = 6;
+            this.comboBox1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBox1_DrawItem);
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // XY_label
             // 
             this.XY_label.AutoSize = true;
-            this.XY_label.Location = new System.Drawing.Point(52, 38);
+            this.XY_label.Location = new System.Drawing.Point(61, 38);
             this.XY_label.Name = "XY_label";
-            this.XY_label.Size = new System.Drawing.Size(33, 12);
+            this.XY_label.Size = new System.Drawing.Size(20, 12);
             this.XY_label.TabIndex = 5;
-            this.XY_label.Text = "label4";
+            this.XY_label.Text = "0,0";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 38);
+            this.label2.Location = new System.Drawing.Point(7, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 12);
+            this.label2.Size = new System.Drawing.Size(54, 12);
             this.label2.TabIndex = 3;
-            this.label2.Text = "XY：";
+            this.label2.Text = "Position：";
             // 
             // speed_domainUpDown
             // 
@@ -184,7 +211,7 @@
             this.speed_domainUpDown.Items.Add("8");
             this.speed_domainUpDown.Items.Add("9");
             this.speed_domainUpDown.Items.Add("10");
-            this.speed_domainUpDown.Location = new System.Drawing.Point(51, 13);
+            this.speed_domainUpDown.Location = new System.Drawing.Point(67, 13);
             this.speed_domainUpDown.Name = "speed_domainUpDown";
             this.speed_domainUpDown.ReadOnly = true;
             this.speed_domainUpDown.Size = new System.Drawing.Size(36, 22);
@@ -194,21 +221,42 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 18);
+            this.label1.Location = new System.Drawing.Point(16, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "Speed：";
             // 
+            // X_button
+            // 
+            this.X_button.Enabled = false;
+            this.X_button.Location = new System.Drawing.Point(73, 21);
+            this.X_button.Name = "X_button";
+            this.X_button.Size = new System.Drawing.Size(30, 30);
+            this.X_button.TabIndex = 5;
+            this.X_button.Text = "X";
+            this.X_button.UseVisualStyleBackColor = false;
+            // 
+            // Z_button
+            // 
+            this.Z_button.Enabled = false;
+            this.Z_button.Location = new System.Drawing.Point(7, 21);
+            this.Z_button.Name = "Z_button";
+            this.Z_button.Size = new System.Drawing.Size(30, 30);
+            this.Z_button.TabIndex = 6;
+            this.Z_button.Text = "Z";
+            this.Z_button.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 307);
+            this.ClientSize = new System.Drawing.Size(363, 298);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
@@ -239,6 +287,10 @@
         private System.Windows.Forms.DomainUpDown speed_domainUpDown;
         private System.Windows.Forms.Label XY_label;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button Z_button;
+        private System.Windows.Forms.Button X_button;
     }
 }
 

@@ -94,17 +94,17 @@ namespace keycode_WindowsFormsApp
                     break;
 
                 case Keys.Z:
-                    zLabel.Location = new Point(charX + zLabel.Size.Width, charY + zLabel.Size.Height);
+                    zLabel.Location = new Point(charX + 9 + zLabel.Size.Width, charY + zLabel.Size.Height);
                     zLabel.Visible = true;
                     zLabel.Enabled = true;
                     break;
                 case Keys.X:
-                    xLabel.Location = new Point(charX + zLabel.Size.Width, charY + zLabel.Size.Height);
+                    xLabel.Location = new Point(charX + 9 + zLabel.Size.Width, charY + zLabel.Size.Height);
                     xLabel.Visible = true;
                     xLabel.Enabled = true;
                     break;
             }
-
+            //arrowKey_textBox.Text += zLabel.Location.X +""+ zLabel.Location.Y;
             XY_label.Text = String.Format("{0},{1}", (charX-9).ToString(), (charY-24).ToString());
 
         }
